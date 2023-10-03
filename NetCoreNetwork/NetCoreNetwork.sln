@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreNetwork", "NetCoreNetwork.csproj", "{B3C57399-99BE-4373-9A94-BFF7D7C372FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "..\Example\Example.csproj", "{830E118C-E9CE-49C3-A478-BDB17B811485}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C1B695F-472C-4BF6-B726-17C3B3350931}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3C57399-99BE-4373-9A94-BFF7D7C372FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C57399-99BE-4373-9A94-BFF7D7C372FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C57399-99BE-4373-9A94-BFF7D7C372FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C57399-99BE-4373-9A94-BFF7D7C372FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{830E118C-E9CE-49C3-A478-BDB17B811485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{830E118C-E9CE-49C3-A478-BDB17B811485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{830E118C-E9CE-49C3-A478-BDB17B811485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{830E118C-E9CE-49C3-A478-BDB17B811485}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72888260-66A3-4F21-AC9E-679751A6B6FA}
+	EndGlobalSection
+EndGlobal
