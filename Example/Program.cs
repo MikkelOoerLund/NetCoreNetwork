@@ -3,7 +3,7 @@
 
 using NetCoreNetwork;
 using System.Net;
-
+using System.Net.Sockets;
 
 class UDPExample
 {
@@ -11,12 +11,12 @@ class UDPExample
     private UDPListener _listener;
 
 
-    public UDPExample(int port)
+    public UDPExample()
     {
         var loopBack = IPAddress.Loopback;
 
-        _listener = new UDPListener(port);
-        _client = new UDPClient(loopBack, port);
+        _listener = new UDPListener(12000);
+        _client = new UDPClient(loopBack, 12000);
     }
 
     public void Run()
@@ -57,30 +57,38 @@ class Program
 {
     public static void Main(string[] args)
     {
-        new UDPExample(12000).Run();
+        var loopBack = IPAddress.Loopback;
 
+        var client = new UDPClient(loopBack, 12000);
+        var listener = new UDPListener(12000);
 
-        Console.WriteLine("Here...");
+        client.Connect();
 
-        while (true)
+        new Thread(() =>
         {
+            while (true)
+            {
+                client.Send("Hegne");
+            }
+        }).Start();
 
-        }
+
+
+        new Thread(() =>
+        {
+            while (true)
+            {
+                var request = listener.Recieve();
+                Console.WriteLine(request);
+            }
+        }).Start();
+
+
+        Console.WriteLine("Press any key to close...");
+        Console.ReadKey();
     }
 
 
-    private static async Task Firkant()
-    {
-        await Console.Out.WriteLineAsync("Firkant");
-    }
-
-    private static async Task Test()
-    {
-        await Console.Out.WriteLineAsync("Test");
-
-        await Task.Delay(1000);
-
-        await Console.Out.WriteLineAsync("Test Done");
-    }
+   
 
 }

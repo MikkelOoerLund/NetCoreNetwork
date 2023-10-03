@@ -9,13 +9,14 @@ namespace NetCoreNetwork
         private int _port;
         private UdpClient _client;
         private IPAddress _ipAddress;
-        //private static IPEndPoint _remoteIpEndPoint = new IPEndPoint(IPAddress.Any, 0);
+        private IPEndPoint _remoteIpEndPoint;
 
         public UDPClient(IPAddress ipAddress, int port)
         {
             _port = port;
             _ipAddress = ipAddress;
             _client = new UdpClient();
+            _remoteIpEndPoint = new IPEndPoint(IPAddress.Any, 0);
         }
 
 
@@ -38,18 +39,18 @@ namespace NetCoreNetwork
             return Encoding.ASCII.GetString(buffer);
         }
 
-        //public void Send(string message)
-        //{
-        //    var bytes = Encoding.ASCII.GetBytes(message);
-        //    _client.Send(bytes, bytes.Length);
-        //}
+        public void Send(string message)
+        {
+            var bytes = Encoding.ASCII.GetBytes(message);
+            _client.Send(bytes, bytes.Length);
+        }
 
 
-        //public string Recieve()
-        //{
-        //    var bytes = _client.Receive(ref _remoteIpEndPoint);
-        //    return Encoding.ASCII.GetString(bytes);
-        //}
+        public string Recieve()
+        {
+            var bytes = _client.Receive(ref _remoteIpEndPoint);
+            return Encoding.ASCII.GetString(bytes);
+        }
 
     }
 }
